@@ -119,3 +119,14 @@ An initial inspection of the dataset included:
 
 - No missing values were identified.
 - The dataset is complete and suitable for exploratory analysis without prior imputation.
+
+## Outcome Distribution
+
+The dataset contains **299 patients**, of whom:
+
+- **203 patients (67.9%) survived**
+- **96 patients (32.1%) died during follow-up**
+
+Although both outcome classes are well represented, the dataset exhibits a **moderate class imbalance** favoring survivors.
+
+This observation is particularly important for predictive modelling, as model performance cannot be adequately assessed using accuracy alone. Future models should therefore be evaluated using additional metrics such as precision, recall, F1-score, and ROC-AUC.
