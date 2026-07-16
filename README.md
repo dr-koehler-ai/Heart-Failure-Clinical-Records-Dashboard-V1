@@ -130,3 +130,37 @@ The dataset contains **299 patients**, of whom:
 Although both outcome classes are well represented, the dataset exhibits a **moderate class imbalance** favoring survivors.
 
 This observation is particularly important for predictive modelling, as model performance cannot be adequately assessed using accuracy alone. Future models should therefore be evaluated using additional metrics such as precision, recall, F1-score, and ROC-AUC.
+
+## Univariate Analysis
+
+To explore the relationship between clinical characteristics and mortality, a univariate analysis was performed.
+
+Continuous variables were analyzed using boxplots to compare their distributions between survivors and patients with a fatal outcome (`DEATH_EVENT`). The analysis included:
+
+- Age
+- Creatinine phosphokinase
+- Ejection fraction
+- Platelet count
+- Serum creatinine
+
+Binary clinical variables were analyzed using prevalence comparisons between outcome groups:
+
+- Anaemia
+- Diabetes
+- Hypertension
+- Smoking status
+
+This exploratory analysis aimed to identify potential differences between survivors and non-survivors and to generate hypotheses for further statistical testing and machine learning modeling.
+
+### Key Findings
+
+The exploratory analysis revealed several differences in clinical characteristics between survivors and patients with a fatal outcome.
+
+Patients who experienced a fatal event showed:
+- Lower ejection fraction values, suggesting reduced cardiac function in this group.
+- Higher serum creatinine levels, indicating a potential association between impaired renal function and mortality.
+- Higher age compared to survivors.
+
+Other variables, including diabetes, hypertension, smoking status, anaemia, platelet count, and creatinine phosphokinase, showed smaller differences between outcome groups in this cohort.
+
+These findings represent associations within the dataset and were used to guide further statistical analysis and machine learning modeling.
