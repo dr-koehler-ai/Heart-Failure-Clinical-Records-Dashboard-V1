@@ -164,3 +164,69 @@ Patients who experienced a fatal event showed:
 Other variables, including diabetes, hypertension, smoking status, anaemia, platelet count, and creatinine phosphokinase, showed smaller differences between outcome groups in this cohort.
 
 These findings represent associations within the dataset and were used to guide further statistical analysis and machine learning modeling.
+
+## Statistical Analysis
+
+To identify clinical features associated with mortality, statistical hypothesis testing was performed comparing patients who survived and patients who died during follow-up.
+
+### Methods
+
+Continuous variables were analyzed using appropriate two-sample tests:
+
+- **Welch's t-test** was applied for approximately normally distributed variables.
+- **Mann–Whitney U test** was applied for non-normally distributed variables.
+
+Categorical variables were analyzed using:
+
+- **Chi-square test of independence** to evaluate associations between categorical clinical characteristics and mortality outcome.
+
+A significance level of **α = 0.05** was used.
+
+> Note: Statistical testing was performed as an exploratory analysis. P-values indicate statistical significance but do not measure clinical relevance. Effect sizes should additionally be considered when interpreting differences.
+
+---
+
+## Results
+
+### Continuous Variables
+
+| Feature | Test | Statistic | p-value | Interpretation |
+|---|---|---:|---:|---|
+| Age | Welch t-test | 4.19 | <0.001 | Significant difference: deceased patients were older |
+| Ejection fraction | Welch t-test | -4.57 | <0.001 | Significant difference: deceased patients had lower ejection fraction |
+| Serum creatinine | Welch t-test | 4.15 | <0.001 | Significant difference: deceased patients had higher creatinine levels |
+| Creatinine phosphokinase | Mann–Whitney U | 10028 | 0.684 | No significant difference detected |
+| Platelets | Welch t-test | -0.84 | 0.399 | No significant difference detected |
+| Serum creatinine | Mann–Whitney U | 14190 | <0.001 | Significant difference confirmed using non-parametric testing |
+
+---
+
+### Categorical Variables
+
+| Feature | Test | Chi-square statistic | p-value | Interpretation |
+|---|---|---:|---:|---|
+| Anaemia | Chi-square test | 1.04 | 0.307 | No significant association with mortality |
+| Diabetes | Chi-square test | 0.00 | 1.000 | No significant association with mortality |
+| High blood pressure | Chi-square test | 1.54 | 0.214 | No significant association with mortality |
+| Smoking | Chi-square test | 0.01 | 0.932 | No significant association with mortality |
+
+---
+
+## Key Findings
+
+The statistical analysis identified several clinical variables significantly associated with mortality:
+
+- **Higher age** was associated with increased mortality.
+- **Lower ejection fraction** showed a significant association with mortality, reflecting reduced cardiac function.
+- **Higher serum creatinine levels** were associated with mortality, suggesting a relationship between impaired renal function and outcome.
+
+No statistically significant associations were observed for:
+
+- Diabetes
+- Smoking status
+- Anaemia
+- High blood pressure
+- Platelet count
+- Creatinine phosphokinase
+
+Further analysis including **effect sizes (e.g., Cohen's d)** and multivariable modeling would be required to assess the clinical relevance and independent predictive value of these features.
